@@ -20,7 +20,7 @@ config_dir=/home/admin/jenkins_imports
 # Replace $1 with $2 in file $3
 replace(){
   echo "Replace $1 with $2 in file $3"
-  sed -i -e "s#$1#$2#g" config_dir"$3"
+  sed -i -e "s#$1#$2#g" "$config_dir/$3"
 }
 
 # replace Dockerhub placeholders
