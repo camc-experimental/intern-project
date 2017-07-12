@@ -1,0 +1,14 @@
+Master:
+  ImageTag: 2.69
+  ServiceType: LoadBalancer
+  ServicePort: 80
+  UseSecurity: false
+  AdminUser: admin
+  AdminPassword: admin
+  InstallPlugins:
+    - kubernetes:0.11
+    - workflow-aggregator:2.5
+    - credentials-binding:1.12
+    - git:3.3.2
+    - ghprb:1.39.0
+    - blueocean:1.1.4

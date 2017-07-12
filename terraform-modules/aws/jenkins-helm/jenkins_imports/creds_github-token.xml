@@ -1,0 +1,7 @@
+<com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl plugin="credentials@2.1.14">
+  <scope>GLOBAL</scope>
+  <id>github-token</id>
+  <description>github-token</description>
+  <username>git-user-placeholder</username>
+  <password><secret-redacted/></password>
+</com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl>

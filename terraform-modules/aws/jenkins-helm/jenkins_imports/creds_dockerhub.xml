@@ -1,0 +1,7 @@
+<com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl plugin="credentials@2.1.14">
+  <scope>GLOBAL</scope>
+  <id>dockerhub</id>
+  <description>dockerhub</description>
+  <username>docker-user-placeholder</username>
+  <password><secret-redacted/></password>
+</com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl>
