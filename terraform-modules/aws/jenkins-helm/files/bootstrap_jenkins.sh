@@ -10,8 +10,7 @@
 # $4 = git username, $5 = git token               #
 ###################################################
 # Jenkins job specs for app                       #
-# $6 = git repo owner, $7 = repo name,            #
-# $8 = git API endpoint                           #
+# $6 = repo name, $7 = git API endpoint           #
 ###################################################
 
 
@@ -35,9 +34,9 @@ replace 'git-user-placeholder' "$4" 'creds_github-token.xml'
 replace '<secret-redacted\/>' "$5" 'creds_github-token.xml'
 
 # replace jenkins-job info
-replace 'git-repo-owner-placeholder' "$6" 'job.xml'
-replace 'git-repo-name-placeholder' "$7" 'job.xml'
-replace 'git-api-endpoint-placeholder' "$8" 'job.xml'
+replace 'git-repo-owner-placeholder' "$4" 'job.xml'
+replace 'git-repo-name-placeholder' "$6" 'job.xml'
+replace 'git-api-endpoint-placeholder' "$7" 'job.xml'
 
 
 echo "Adding credentials to Jenkins"
@@ -46,6 +45,6 @@ cat $config_dir/creds_github-token.xml | jenkins create-credentials-by-xml "Syst
 cat $config_dir/creds_watson-api-key.xml | jenkins create-credentials-by-xml "SystemCredentialsProvider::SystemContextResolver::jenkins" "(global)"
 
 echo "Adding job to Jenkins"
-cat $config_dir/job.xml | jenkins create-job "$7"
+cat $config_dir/job.xml | jenkins create-job "$6"
 
-curl -X POST -u $JENKINS_USERNAME:$JENKINS_API_TOKEN "$JENKINS_URL"job/$7/build?delay=0
+curl -X POST -u $JENKINS_USERNAME:$JENKINS_API_TOKEN "$JENKINS_URL"job/$6/build?delay=0
