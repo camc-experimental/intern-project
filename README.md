@@ -17,7 +17,7 @@ This repository contains a Terraform module that will install Jenkins and Helm o
 1. Download the Jenkins CLI.
 1. Set up security for Jenkins with `setup_jk_security.groovy`.
 
-##### `jenkins_creds.sh`
+##### `bootstrap_jenkins.sh`
 1. Fill in secrets and other variables in Jenkins XML configuraiton files (in `terraform-modules/aws/jenkins-helm/jenkins_imports/`).
 1. Add the credentials and build job to Jenkins.
 1. Tell Jenkins to scan the newly added repository.
