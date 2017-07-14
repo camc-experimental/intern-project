@@ -31,7 +31,7 @@ counter=0
 while [ "$counter" -le "$timeout" ]
   do
     wget -c "$JENKINS_URL"jnlpJars/jenkins-cli.jar && break
-    sleep 5
+    sleep 10
     ((++counter))
 done
 # Set permissions + path
