@@ -1,5 +1,10 @@
 # Hold setup/config information needed to setup kube-env
 
+variable "aws_s3_bucket" {
+  description = "AWS S3 bucket name"
+  default = ""
+}
+
 variable "cluster_name" {
   description = "Identifier used for naming cluster resources"
   default = ""
@@ -64,10 +69,19 @@ variable "node_script_name" {
 
 data "template_file" "nodes_user_data" {
   template = "${file("${path.module}/${var.node_script}")}"
+
+  vars {
+    aws_s3_bucket = "${var.cluster_name}"
+    cluster_name = "${var.aws_s3_bucket}"
+  }
 }
 
 data "template_file" "master_user_data" {
   template = "${file("${path.module}/${var.master_script}")}"
+  vars {
+    aws_s3_bucket = "${var.cluster_name}"
+    cluster_name = "${var.aws_s3_bucket}"
+  }
 }
 
 
