@@ -1,5 +1,3 @@
-# Hold setup/config information needed to setup kube-env
-
 variable "aws_s3_bucket" {
   description = "AWS S3 bucket name"
   default = ""
