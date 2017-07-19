@@ -69,16 +69,16 @@ data "template_file" "nodes_user_data" {
   template = "${file("${path.module}/${var.node_script}")}"
 
   vars {
-    aws_s3_bucket = "${var.cluster_name}"
-    cluster_name = "${var.aws_s3_bucket}"
+    aws_s3_bucket = "${var.aws_s3_bucket}"
+    cluster_name = "${var.cluster_name}"
   }
 }
 
 data "template_file" "master_user_data" {
   template = "${file("${path.module}/${var.master_script}")}"
   vars {
-    aws_s3_bucket = "${var.cluster_name}"
-    cluster_name = "${var.aws_s3_bucket}"
+    aws_s3_bucket = "${var.aws_s3_bucket}"
+    cluster_name = "${var.cluster_name}"
   }
 }
 
